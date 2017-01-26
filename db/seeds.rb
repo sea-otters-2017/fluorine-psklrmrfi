@@ -13,3 +13,7 @@ Robot.delete_all
                   in_stock: [true, false].sample,
                   product_id: 1 )
 end
+
+Manufacturer.delete_all
+
+10.times { Manufacturer.create!(name: Faker::Company.name) }
