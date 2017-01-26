@@ -1,4 +1,10 @@
-<h1><%= @robot.name %></h1>
-<p><%= @robot.product_id %></p>
+<div class='robot-show-container'>
+  <h1><%= "Robot: #{@robot.name}" %></h1>
+  <p><%= "Height: 22 yds" %></p>
+  <p><%= "Weight: 80 tons" %></p>
+  <p><%= "Model: XYZ-6154" %></p>
+  <p><%= "Manufacturer: Dunder Mifflin" %></p>
+</div>
+
 <%= link_to "edit #{@robot.name}", edit_robot_path %>
 <%= link_to 'mark received', mark_received_robot_path(@robot) unless @robot.in_stock %>
