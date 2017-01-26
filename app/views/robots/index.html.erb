@@ -10,6 +10,12 @@
     <% end %>
 </div>
 
-<div id="in-stock-container">
-
+<div id="on-order-container">
+  <h2 id='on-order-title'>On Order</h2>
+  <% Robot.all.where(in_stock: false).each do |robot| %>
+    <div class="on-order-robot">
+      <h3><%= robot.name %></h3>
+      <p><%= robot.product_id %></p>
+    </div>
+  <% end %>
 </div>
