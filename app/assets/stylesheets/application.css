@@ -29,28 +29,38 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
+  height: 60px;
   background: darkgray;
 }
 
 nav ul {
+  display: table;
+  width: 100%;
   position: relative;
   margin: 0;
-  z-index: 2;
-  text-transform: uppercase;
-  text-align: center;
+  text-align: right;
+  height: 60px;
 }
 
 nav li {
   display: inline-block;
-  padding: 1.35em 0;
+  padding: 20px 0;
   margin-right: 3em;
   font-size: 0.9em;
+  height: 60px;
+}
+
+nav li#psklrmrfi-link {
+  float: left;
 }
 
 nav a {
   text-decoration: none;
-  color: #fff;
-  font-size: 0.9em;
+  color: black;
+}
+
+nav li#psklrmrfi-link {
+  font-size: 1.2em;
 }
 
 .outside-container {
