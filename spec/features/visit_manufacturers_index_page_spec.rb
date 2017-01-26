@@ -8,6 +8,6 @@ feature "visiting the manufacturers index page" do
 
   scenario "the user can see a list of all manufacturers" do
     visit manufacturers_path
-    expect(page).to have_content(manufacturer)
+    expect(page).to have_content(:manufacturers)
   end
 end
