@@ -7,11 +7,9 @@ RSpec.feature 'UnwelcomeController', :type => :feature do
     expect(page).to have_text("blackbelt supermutant")
   end
 
-  xscenario "User clicks the 'No' button" do
+  scenario "User clicks the 'No' button" do
     visit root_path
-
-    click_button "No"
-
-    expect(page).to have_text("Widget was successfully created.")
+    click_link "No"
+    expect(page).to have_css("#login-button")
   end
 end
