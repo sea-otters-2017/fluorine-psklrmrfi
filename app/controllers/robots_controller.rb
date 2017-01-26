@@ -1,28 +1,47 @@
 class RobotsController < ApplicationController
 
-  def index
-    @robots = Robot.recent
-  end
+  before_action :set_robot, only: [ :show, :edit, :update ]
 
-  def show
-    @robot = Robot.find(params[:id])
+  def index
+    @robots = Robot.all
   end
 
   def new
     @robot = Robot.new
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @robot.update(robot_params)
+      redirect_to @robot, notice: 'robo-update successful.'
+    else
+      render :edit
+    end
+  end
+
   def create
     @robot = Robot.new(robot_params)
-
     if @robot.save
-      redirect_to @robot, notice: 'Robot was successfully created.'
+      redirect_to @robot, notice: 'robo-input successful.'
     else
       render :new
     end
   end
 
   private
+  def new_robot
+    @robot = Robot.find(params[:id])
+  end
+
+  def set_robot
+    @robot = Robot.find(params[:id])
+  end
+
   def robot_params
     params.require(:robot).permit(:user_throw)
   end
