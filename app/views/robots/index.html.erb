@@ -1,0 +1,14 @@
+<h1> Inventory </h1>
+
+<div id="in-stock-container">
+    <% Robot.all.each do |robot| %>
+      <div class="in-stock-robot">
+        <h3><%= robot.name %></h3>
+        <p><%= robot.product_id %></p>
+      </div>
+    <% end %>
+</div>
+
+<div id="in-stock-container">
+
+</div>
