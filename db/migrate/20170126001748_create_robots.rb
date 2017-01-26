@@ -7,5 +7,6 @@ class CreateRobots < ActiveRecord::Migration[5.0]
 
       t.timestamps null: false
     end
+    add_index :robots, :product_id, uniqueness: true
   end
 end
