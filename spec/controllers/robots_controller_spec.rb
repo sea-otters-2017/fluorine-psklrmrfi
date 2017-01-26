@@ -22,17 +22,17 @@ RSpec.describe RobotsController, type: :controller do
 
   describe "GET #show" do
     it "responds with status code 200" do
-      get :show, { id: robot.id }
+      get :show, params: { id: robot.id }
       expect(response).to have_http_status 200
     end
 
     it "assigns the correct robot as @robot" do
-      get :show, { id: robot.id }
+      get :show, params: { id: robot.id }
       expect(assigns(:robot)).to eq(robot)
     end
 
     it "renders the :show template" do
-      get :show, { id: robot.id }
+      get :show, params: { id: robot.id }
       expect(response).to render_template(:show)
     end
   end
