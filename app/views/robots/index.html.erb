@@ -1,7 +1,8 @@
 <h1> Inventory </h1>
 
 <div id="in-stock-container">
-    <% Robot.all.each do |robot| %>
+    <h2 id='in-stock-title'>In Stock</h2>
+    <% Robot.all.where(in_stock: true).each do |robot| %>
       <div class="in-stock-robot">
         <h3><%= robot.name %></h3>
         <p><%= robot.product_id %></p>
