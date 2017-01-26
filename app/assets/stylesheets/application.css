@@ -113,6 +113,15 @@ li#psklrmrfi-link a:hover {
   border-radius: 10px;
 }
 
+.robot-show-container {
+  background-color: #222;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  color: lightgray;
+  border-radius: 10px;
+}
+
 .shadow {
   box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
 }

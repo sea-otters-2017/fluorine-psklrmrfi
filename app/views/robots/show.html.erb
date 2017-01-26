@@ -6,5 +6,7 @@
   <p><%= "Manufacturer: Dunder Mifflin" %></p>
 </div>
 
-<%= link_to "edit #{@robot.name}", edit_robot_path %>
-<%= link_to 'mark received', mark_received_robot_path(@robot) unless @robot.in_stock %>
+<div class='t-a robot-edit-links'>
+  <%= link_to "edit #{@robot.name}", edit_robot_path %>
+  <%= link_to 'mark received', mark_received_robot_path(@robot) unless @robot.in_stock %>
+</div>
