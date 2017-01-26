@@ -31,6 +31,7 @@ nav {
   top: 0;
   height: 60px;
   background: darkgray;
+  border-bottom: 2px solid #999;
 }
 
 nav ul {
