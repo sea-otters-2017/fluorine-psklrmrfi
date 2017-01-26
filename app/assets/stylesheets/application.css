@@ -14,14 +14,16 @@
  *= require_self
  */
 
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 body {
   background-color: lightgray;
 }
 
 .outside-container {
-  width: 1000px;
-  display: flex;
-  justify-content: space-between;
+  width: 850px;
 }
 
 #in-stock-container, #on-order-container {
@@ -29,7 +31,19 @@ body {
   padding: 10px 20px;
   color: lightgray;
   background-color: #555;
-  border-radius: 10px;
+  border: 2px solid rgba(0, 255, 0, 0.57);;
+}
+
+#in-stock-container {
+  float: left;
+}
+
+#on-order-container {
+  float: right;
+}
+
+#inventory-title {
+  margin: 30px auto;
 }
 
 .in-stock-robot, .on-order-robot {
