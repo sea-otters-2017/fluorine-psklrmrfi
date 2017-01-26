@@ -10,6 +10,15 @@ class RobotsController < ApplicationController
     @robot = Robot.new
   end
 
+  def create
+    @robot = Robot.new(robot_params)
+    if @robot.save
+      redirect_to @robot, notice: 'robo-input successful.'
+    else
+      render :new
+    end
+  end
+
   def show
   end
 
@@ -21,15 +30,6 @@ class RobotsController < ApplicationController
       redirect_to @robot, notice: 'robo-update successful.'
     else
       render :edit
-    end
-  end
-
-  def create
-    @robot = Robot.new(robot_params)
-    if @robot.save
-      redirect_to @robot, notice: 'robo-input successful.'
-    else
-      render :new
     end
   end
 
