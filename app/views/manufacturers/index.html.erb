@@ -1,0 +1,6 @@
+<h2>Manufacturers</h2>
+<% @manufacturers.each do | manufacturer |%>
+  <div>
+    <%= link_to manufacturer.name, manufacturer %>
+  </div>
+<% end %>
