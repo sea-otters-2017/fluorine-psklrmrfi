@@ -60,8 +60,17 @@ nav a {
   color: black;
 }
 
-nav li#psklrmrfi-link {
+nav a:hover {
+  -webkit-text-stroke: 1px #222;
+}
+
+li#psklrmrfi-link a {
   font-size: 1.2em;
+  text-shadow: 1px 1px #CCC;
+}
+
+li#psklrmrfi-link a:hover {
+  -webkit-text-stroke: 1px #222;
 }
 
 .outside-container {
