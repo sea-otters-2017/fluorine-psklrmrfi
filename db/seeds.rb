@@ -7,13 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Robot.delete_all
+Product.delete_all
+Manufacturer.delete_all
+
+10.times do |n|
+  Manufacturer.create!(name: Faker::Company.name)
+end
+
+20.times do |n|
+  Product.create!(  model_number: "XYZ-#{rand(100000..999999)}",
+                    height: rand(1..200),
+                    weight: rand(5..25),
+                    manufacturer_id: Manufacturer.all.sample.id )
+end
 
 20.times do |n|
   Robot.create!(  name: Faker::StarWars.droid,
                   in_stock: [true, false].sample,
-                  product_id: 1 )
+                  product_id: Product.all.sample.id )
 end
-
-Manufacturer.delete_all
-
-10.times { Manufacturer.create!(name: Faker::Company.name) }
