@@ -24,4 +24,8 @@ RSpec.describe "Routing to robots", :type => :routing do
   it "routes POST /robots to robots#create" do
     expect(:post => "/robots").to route_to("robots#create")
   end
+
+  it "routes GET /robots/1/mark_received to robots#mark_received" do
+    expect(:get => "/robots/1/mark_received").to route_to("robots#mark_received", :id => "1")
+  end
 end
