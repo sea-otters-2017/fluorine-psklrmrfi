@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+20.times do |n|
+  Robot.create!(  name: Faker::StarWars.droid,
+                  in_stock: [true, false].sample,
+                  product_id: 1 )
+end
