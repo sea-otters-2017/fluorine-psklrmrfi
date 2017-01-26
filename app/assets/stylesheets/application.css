@@ -14,9 +14,50 @@
  *= require_self
  */
 
+body {
+  background-color: lightgray;
+}
+
+.outside-container {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+
 #in-stock-container, #on-order-container {
-  width: 40%;
-  margin: 0;
+  width: 350px;
+  padding: 10px 20px;
+  color: lightgray;
+  background-color: #555;
+  border-radius: 10px;
+}
+
+.in-stock-robot, .on-order-robot {
+  width: 90%;
+  margin: 10px auto;
   padding: 20px;
-  float: left
+  float: left;
+  background-color: lightgray;
+  color: black;
+  border-radius: 10px;
+}
+
+.shadow {
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.t-a {
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+}
+
+.clear {
+  clear: both;
 }
