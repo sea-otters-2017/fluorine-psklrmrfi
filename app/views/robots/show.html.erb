@@ -1,4 +1,4 @@
-<div class='robot-show-container'>
+<div class='robot-show-container shadow'>
   <h1><%= "Robot: #{@robot.name}" %></h1>
   <p><%= "Height: 22 yds" %></p>
   <p><%= "Weight: 80 tons" %></p>
@@ -8,5 +8,8 @@
 
 <div class='t-a robot-edit-links'>
   <%= link_to "edit #{@robot.name}", edit_robot_path %>
+</div>
+
+<div class='t-a robot-edit-links'>
   <%= link_to 'mark received', mark_received_robot_path(@robot) unless @robot.in_stock %>
 </div>

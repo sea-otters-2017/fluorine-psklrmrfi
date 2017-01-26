@@ -114,12 +114,16 @@ li#psklrmrfi-link a:hover {
 }
 
 .robot-show-container {
-  background-color: #222;
+  background-color: #444;
   max-width: 400px;
   margin: auto;
   padding: 20px;
   color: lightgray;
   border-radius: 10px;
+}
+
+.robot-edit-links {
+  margin-top: 20px;
 }
 
 .shadow {
