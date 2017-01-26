@@ -1,3 +1,4 @@
 <h1><%= @robot.name %></h1>
 <p><%= @robot.product_id %></p>
 <%= link_to "edit #{@robot.name}", edit_robot_path %>
+<%= link_to 'mark received', mark_received_robot_path(@robot)  %>

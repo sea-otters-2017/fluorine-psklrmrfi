@@ -5,7 +5,7 @@ class Robot < ApplicationRecord
   validates :product_id, presence: true
 
   def mark_received
-    in_stock = true
+    self.update_attribute(:in_stock, true)
   end
 
 end
