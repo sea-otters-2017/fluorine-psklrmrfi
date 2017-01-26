@@ -40,6 +40,6 @@ class RobotsController < ApplicationController
   end
 
   def robot_params
-    params.require(:robot).permit(:user_throw)
+    params.require(:robot).permit(:name)
   end
 end
