@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :games, except: [:destroy]
+  resources :robots, except: [:destroy]
 
 end

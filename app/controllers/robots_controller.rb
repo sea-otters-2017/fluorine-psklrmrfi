@@ -34,9 +34,6 @@ class RobotsController < ApplicationController
   end
 
   private
-  def new_robot
-    @robot = Robot.find(params[:id])
-  end
 
   def set_robot
     @robot = Robot.find(params[:id])
