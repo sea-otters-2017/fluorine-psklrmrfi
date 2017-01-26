@@ -13,4 +13,12 @@ RSpec.describe Robot, type: :model do
       expect(robot).to validate_presence_of :product_id
     end
   end
+
+  # describe 'associations' do
+  #
+  #   it 'belongs to a product' do
+  #     expect(robot).to belong_to(:user)
+  #   end
+  # end
+
 end
