@@ -3,6 +3,6 @@
 <div>
   <%= form_for(:session, url: login_path) do |f| %>
     <%= f.password_field :password%>
-    <%= f.submit "Don't click here", class: "login-button" %>
+    <%= f.submit "Don't click here", id: "login-button" %>
   <% end %>
 </div>
