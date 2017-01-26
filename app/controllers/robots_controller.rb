@@ -34,11 +34,7 @@ class RobotsController < ApplicationController
   end
 
   def mark_received
-    p @robot
-    p @robot.in_stock
     @robot.mark_received
-    p @robot
-    p @robot.in_stock
     redirect_to @robot
   end
 
