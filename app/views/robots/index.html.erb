@@ -1,0 +1,21 @@
+<h1> Inventory </h1>
+
+<div id="in-stock-container">
+    <h2 id='in-stock-title'>In Stock</h2>
+    <% Robot.all.where(in_stock: true).each do |robot| %>
+      <div class="in-stock-robot">
+        <h3><%= robot.name %></h3>
+        <p><%= robot.product_id %></p>
+      </div>
+    <% end %>
+</div>
+
+<div id="on-order-container">
+  <h2 id='on-order-title'>On Order</h2>
+  <% Robot.all.where(in_stock: false).each do |robot| %>
+    <div class="on-order-robot">
+      <h3><%= robot.name %></h3>
+      <p><%= robot.product_id %></p>
+    </div>
+  <% end %>
+</div>

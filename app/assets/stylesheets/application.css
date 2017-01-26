@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+#in-stock-container, #on-order-container {
+  width: 40%;
+  margin: 0;
+  padding: 20px;
+  float: left
+}
