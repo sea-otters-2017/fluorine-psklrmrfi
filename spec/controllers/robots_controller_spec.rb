@@ -1,10 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe ManufacturersController, type: :controller do
-<<<<<<< HEAD
-
-=======
-  let!(:manufacturer) { Manufacturer.create!(name: 'Acme Robot') }
+RSpec.describe RobotsController, type: :controller do
+  let!(:robot) { FactoryGirl.create(:robot) }
 
   describe "GET #index" do
     it "responds with status code 200" do
@@ -12,9 +9,9 @@ RSpec.describe ManufacturersController, type: :controller do
       expect(response).to have_http_status 200
     end
 
-    it "assigns all manufacturers as @manufacturers" do
+    it "assigns all robots as @robots" do
       get :index
-      expect(assigns(:manufacturers)).to eq Manufacturer.all
+      expect(assigns(:robots)).to eq Robot.all
     end
 
     it "renders the :index template" do
@@ -25,19 +22,20 @@ RSpec.describe ManufacturersController, type: :controller do
 
   describe "GET #show" do
     it "responds with status code 200" do
-      get :show, params: { id: manufacturer.id }
+      get :show, params: { id: robot.id }
       expect(response).to have_http_status 200
     end
 
-    it "assigns the correct manufacturer as @manufacturer" do
-      get :show, params: { id: manufacturer.id }
-      expect(assigns(:manufacturer)).to eq(manufacturer)
+    it "assigns the correct robot as @robot" do
+      get :show, params: { id: robot.id }
+      expect(assigns(:robot)).to eq(robot)
     end
 
     it "renders the :show template" do
-      get :show, params: { id: manufacturer.id }
+      get :show, params: { id: robot.id }
       expect(response).to render_template(:show)
     end
   end
->>>>>>> master
+
+
 end

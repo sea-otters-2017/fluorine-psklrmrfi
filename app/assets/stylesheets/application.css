@@ -13,3 +13,122 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-color: lightgray;
+  margin: 0;
+  margin-top: 80px;
+}
+
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 60px;
+  background: #BBB;
+  border-bottom: 2px solid #999;
+  margin: 0;
+}
+
+nav:hover {
+  background: darkgray;
+}
+
+
+nav ul {
+  display: table;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  text-align: right;
+  height: 60px;
+}
+
+nav li {
+  display: inline-block;
+  padding: 20px 0;
+  margin-right: 3em;
+  font-size: 0.9em;
+  height: 20px;
+}
+
+nav li#psklrmrfi-link {
+  float: left;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  -webkit-text-stroke: 1px #222;
+}
+
+li#psklrmrfi-link a {
+  font-size: 1.2em;
+  text-shadow: 1px 1px #CCC;
+}
+
+li#psklrmrfi-link a:hover {
+  -webkit-text-stroke: 1px #222;
+}
+
+.outside-container {
+  width: 850px;
+}
+
+#in-stock-container, #on-order-container {
+  width: 350px;
+  padding: 10px 20px;
+  color: lightgray;
+  background-color: #555;
+  border: 2px solid rgba(0, 255, 0, 0.57);;
+}
+
+#in-stock-container {
+  float: left;
+}
+
+#on-order-container {
+  float: right;
+}
+
+#inventory-title {
+  margin: 30px auto;
+}
+
+.in-stock-robot, .on-order-robot {
+  width: 90%;
+  margin: 10px auto;
+  padding: 20px;
+  float: left;
+  background-color: lightgray;
+  color: black;
+  border-radius: 10px;
+}
+
+.shadow {
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.t-a {
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+}
+
+.clear {
+  clear: both;
+}
