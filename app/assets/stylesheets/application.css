@@ -30,9 +30,15 @@ nav {
   width: 100%;
   top: 0;
   height: 60px;
-  background: darkgray;
+  background: #BBB;
   border-bottom: 2px solid #999;
+  margin: 0;
 }
+
+nav:hover {
+  background: darkgray;
+}
+
 
 nav ul {
   display: table;
