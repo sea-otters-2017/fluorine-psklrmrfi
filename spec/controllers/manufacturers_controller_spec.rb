@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe ManufacturersController, type: :controller do
-<<<<<<< HEAD
-
-=======
   let!(:manufacturer) { Manufacturer.create!(name: 'Acme Robot') }
 
   describe "GET #index" do
@@ -39,5 +36,4 @@ RSpec.describe ManufacturersController, type: :controller do
       expect(response).to render_template(:show)
     end
   end
->>>>>>> master
 end
