@@ -17,7 +17,7 @@ RSpec.describe "Routing to robots", :type => :routing do
     expect(:get => "/robots/1/edit").to route_to("robots#edit", :id => "1")
   end
 
-  it "routes PUT /robots1 to robots#update" do
+  it "routes PUT /robots/1 to robots#update" do
     expect(:put => "/robots/1").to route_to("robots#update", :id => "1")
   end
 
