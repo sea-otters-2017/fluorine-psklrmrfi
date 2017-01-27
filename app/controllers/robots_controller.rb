@@ -11,7 +11,6 @@ class RobotsController < ApplicationController
   end
 
   def create
-    p params
     @robot = Robot.new(robot_params)
     @robot.product_id = params[:product_id]
     if @robot.save
