@@ -25,6 +25,8 @@ RSpec.describe Robot, type: :model do
   end
 
   describe 'associations' do
+    let(:product){ FactoryGirl.create(:product) }
+    let(:robot){ FactoryGirl.create(:robot, product: product) }
     it 'belongs to a product' do
       expect(robot).to belong_to(:product)
     end
