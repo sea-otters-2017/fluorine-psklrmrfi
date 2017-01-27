@@ -28,3 +28,8 @@ module RobotImporter
     end
   end
 end
+
+=begin
+require "#{Rails.root}/lib/utilities/robot_importer"
+RobotImporter.import_from(api_url: "http://jordankamin.com/robots_api/robots.json")
+=end
