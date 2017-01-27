@@ -26,8 +26,3 @@ end
                   in_stock: [true, false].sample,
                   product_id: Product.all.sample.id )
 end
-
-
-# require 'robot_importer'
-#
-# RobotImporter.import_from('http://jordankamin.com/robots_api/robots.json')
