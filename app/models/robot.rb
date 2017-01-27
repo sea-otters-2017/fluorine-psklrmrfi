@@ -1,4 +1,6 @@
 class Robot < ApplicationRecord
+  belongs_to :product
+  has_one :manufacturer, through: :product
 
   validates :name, presence: true
   validates :in_stock, inclusion: { in: [ true, false ] }
