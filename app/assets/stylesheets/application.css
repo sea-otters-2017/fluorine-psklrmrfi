@@ -66,18 +66,18 @@ nav a {
   color: black;
 }
 
-nav a:hover {
+/*nav a:hover {
   -webkit-text-stroke: 1px #222;
-}
+}*/
 
 li#psklrmrfi-link a {
   font-size: 1.2em;
   text-shadow: 1px 1px #CCC;
 }
 
-li#psklrmrfi-link a:hover {
+/*li#psklrmrfi-link a:hover {
   -webkit-text-stroke: 1px #222;
-}
+}*/
 
 .outside-container {
   width: 850px;
@@ -124,6 +124,23 @@ li#psklrmrfi-link a:hover {
 
 .robot-edit-links {
   margin-top: 20px;
+}
+
+a:link    { color: #ec007f }
+a:visited { color: darkred }
+a:hover   { color: darkorange }
+a:active  { color: darkred }
+
+nav a:link    { color: black }
+nav a:visited { color: black }
+nav a:hover   {
+  -webkit-text-stroke: 1px #222;
+  color: black;
+}
+nav a:active  { color: #222 }
+
+.link {
+  text-decoration: none;
 }
 
 .shadow {
