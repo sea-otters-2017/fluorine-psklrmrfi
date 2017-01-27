@@ -14,7 +14,7 @@
     <nav>
       <ul>
         <li id='psklrmrfi-link'><%= link_to 'PSKLRMRFI', robots_path %></li>
-        <li><%= link_to 'new order', manufacturers_path %></li>
+        <li><%= link_to 'view manufacturers', manufacturers_path %></li>
         <% if session[:admin] %>
           <li><%= link_to 'logout', logout_path, method: :delete %></li>
         <% else %>
