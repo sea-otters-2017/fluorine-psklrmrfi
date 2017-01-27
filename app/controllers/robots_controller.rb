@@ -47,4 +47,5 @@ class RobotsController < ApplicationController
   def robot_params
     params.require(:robot).permit(:name)
   end
+
 end
