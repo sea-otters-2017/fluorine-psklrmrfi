@@ -5,13 +5,13 @@
 ### Team: Fluorine
 
 * Kate Kourbatova
-    * @katekourbatova
+    * [@katekourbatova](https://github.com/katekourbatova)
 * Pat Holland
-    * @pholls
+    * [@pholls](https://github.com/pholls)
 * Justin Grassé
-    * @justGrasse
+    * [@justGrasse](https://github.com/justGrasse)
 * Katherine Guenther
-    * @KatherineGuenther
+    * [@KatherineGuenther](https://github.com/KatherineGuenther)
 
 ### Description
 
