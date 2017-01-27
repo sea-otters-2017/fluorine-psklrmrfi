@@ -1,27 +1,34 @@
-<div class='robot-form'>
-  <%= form_for(robot) do |f| %>
+<% if session[:admin] %>
+  <div class='robot-form'>
+    <%= form_for(robot) do |f| %>
 
-    <% if robot.errors.any? %>
-      <div class="errors">
-        <h2><%= pluralize(robot.errors, 'robo-error') %></h2>
+      <% if robot.errors.any? %>
+        <div class="errors">
+          <h2><%= pluralize(robot.errors, 'robo-error') %></h2>
+        </div>
+        <ul>
+          <% robot.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :name, 'name' %>
+        <%= f.text_field :name %>
       </div>
-      <ul>
-        <% robot.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+
+      <%= hidden_field_tag :product_id, @product.id %>
+
+      <div class="actions">
+        <%= f.submit 'robo-add' %>
+      </div>
+
     <% end %>
+  </div>
 
-    <div class="field">
-      <%= f.label :name, 'name' %>
-      <%= f.text_field :name %>
-    </div>
-
-    <%= hidden_field_tag :product_id, @product.id %>
-
-    <div class="actions">
-      <%= f.submit 'robo-add' %>
-    </div>
-
-  <% end %>
-</div>
+<% else %>
+    <%= form_for(robot) do |f| %>
+      <%= f.submit 'buy this robot' %>
+    <% end %>
+<% end %>
