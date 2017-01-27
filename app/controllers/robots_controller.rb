@@ -1,6 +1,6 @@
 class RobotsController < ApplicationController
 
-  before_action :set_robot, only: [ :show, :edit, :update ]
+  before_action :set_robot, only: [ :show, :edit, :update, :mark_received ]
 
   def index
     @robots = Robot.all
@@ -31,6 +31,11 @@ class RobotsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def mark_received
+    @robot.mark_received
+    redirect_to @robot
   end
 
   private

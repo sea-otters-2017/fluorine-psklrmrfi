@@ -15,11 +15,12 @@
       <li id='psklrmrfi-link'><%= link_to 'PSKLRMRFI', robots_path %></li>
       <li><%= link_to 'I Love Mutants!', 'https://en.wikipedia.org/wiki/Amish' %></li>
       <li><%= link_to 'new order', manufacturers_path %></li>
-      <li><%= link_to 'logout', robots_path %></li>
+      <li><%= link_to 'logout', logout_path, method: :delete %></li>
     </ul>
   </nav>
 
   <body>
+    <%= flash[:notice] %>
     <%= yield %>
   </body>
 </html>
