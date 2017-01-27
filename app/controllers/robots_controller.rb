@@ -11,7 +11,9 @@ class RobotsController < ApplicationController
   end
 
   def create
+    p params
     @robot = Robot.new(robot_params)
+    @robot.product_id = params[:product_id]
     if @robot.save
       redirect_to @robot, notice: 'robo-input successful.'
     else
@@ -23,6 +25,7 @@ class RobotsController < ApplicationController
   end
 
   def edit
+    @product = @robot.product
   end
 
   def update
@@ -35,7 +38,7 @@ class RobotsController < ApplicationController
 
   def mark_received
     @robot.mark_received
-    redirect_to @robot
+    redirect_to @robot, notice: "#{@robot.name} has been received"
   end
 
   private

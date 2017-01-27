@@ -4,4 +4,4 @@
 <p><%= @product.weight %> tons</p>
 <p><%= @product.manufacturer.name %></p>
 
-<%= link_to 'Order', new_robot_path %>
+<%= render 'robots/form', robot: Robot.new %>

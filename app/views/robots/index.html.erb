@@ -3,21 +3,20 @@
 <div class='outside-container center'>
   <div id="in-stock-container" class="shadow">
       <h2 id='in-stock-title' class='underline'>In Stock</h2>
-      <% Robot.all.where(in_stock: true).each do |robot| %>
+      <% Robot.in_stock.each do |robot| %>
         <div class="in-stock-robot shadow">
           <h3><%= link_to robot.name, robot %></h3>
-          <p><%= robot.product_id %></p>
+          <p><%= "Model No: #{robot.id}" %></p>
         </div>
       <% end %>
   </div>
 
   <div id="on-order-container" class="shadow">
     <h2 id='on-order-title' class='underline'>On Order</h2>
-    <% Robot.all.where(in_stock: false).each do |robot| %>
+    <% Robot.on_order.each do |robot| %>
       <div class="on-order-robot">
         <h3><%= link_to robot.name, robot %></h3>
-        <p><%= robot.product_id %></p>
-      </div>
+          <p><%= "Expected: #{robot.created_at}" %></p>      </div>
     <% end %>
   </div>
   <div class='clear'></div>

@@ -1,5 +1,7 @@
 <h2><%= @manufacturer.name %></h2>
 
+<% @manufacturer.products.each do |product| %>
+  <p><%= link_to product.model_number, manufacturer_product_path(product) %></p>
+<% end %>
 
 <%= link_to 'Back', :back %>
-
