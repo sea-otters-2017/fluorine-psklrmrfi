@@ -17,6 +17,8 @@
       <%= f.text_field :name %>
     </div>
 
+    <%= hidden_field_tag :product_id, @product.id %>
+
     <div class="actions">
       <%= f.submit 'robo-add' %>
     </div>
