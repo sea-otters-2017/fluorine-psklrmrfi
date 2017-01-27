@@ -26,3 +26,5 @@ end
                   in_stock: [true, false].sample,
                   product_id: Product.all.sample.id )
 end
+# robot_url = "http://jordankamin.com/robots_api/robots.json"
+# RobotImporter.import_from(api_url: robot_url)
