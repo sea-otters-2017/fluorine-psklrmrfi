@@ -5,6 +5,7 @@ module SessionsHelper
   end
 
   def user_logged_in?
+    return false unless User.first
     return true if session[:user_id] == User.first.id #The user is the only user
     false
   end
