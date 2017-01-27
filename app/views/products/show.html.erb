@@ -1,0 +1,7 @@
+<h2><%= @product.model_number%></h2>
+
+<p><%= @product.height %> yards</p>
+<p><%= @product.weight %> tons</p>
+<p><%= @product.manufacturer.name %></p>
+
+<%= link_to 'Order', new_robot_path %>

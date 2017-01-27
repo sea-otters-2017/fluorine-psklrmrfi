@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'unwelcome#index'
 
   get    '/login', to: 'sessions#new'

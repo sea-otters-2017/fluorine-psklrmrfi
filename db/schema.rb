@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20170126232242) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string   "model_number",    null: false
+    t.integer  "height",          null: false
+    t.integer  "weight",          null: false
+    t.integer  "manufacturer_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "robots", force: :cascade do |t|
     t.string   "name",                       null: false
     t.boolean  "in_stock",   default: false
