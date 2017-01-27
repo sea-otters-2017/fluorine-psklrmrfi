@@ -25,6 +25,7 @@ class RobotsController < ApplicationController
   end
 
   def edit
+    @product = @robot.product
   end
 
   def update
@@ -37,7 +38,7 @@ class RobotsController < ApplicationController
 
   def mark_received
     @robot.mark_received
-    redirect_to @robot
+    redirect_to @robot, notice: "#{@robot.name} has been received"
   end
 
   private
