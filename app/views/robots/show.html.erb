@@ -6,10 +6,12 @@
   <p><%= "Manufacturer: #{@robot.manufacturer.name}" %></p>
 </div>
 
-<div class='t-a robot-edit-links'>
-  <%= link_to "edit #{@robot.name}", edit_robot_path %>
-</div>
+<% if session[:admin] %>
+  <div class='t-a robot-edit-links'>
+    <%= link_to "edit #{@robot.name}", edit_robot_path %>
+  </div>
+  <div class='t-a robot-edit-links'>
+    <%= link_to 'mark received', mark_received_robot_path(@robot) unless @robot.in_stock %>
+  </div>
+<% end %>
 
-<div class='t-a robot-edit-links'>
-  <%= link_to 'mark received', mark_received_robot_path(@robot) unless @robot.in_stock %>
-</div>
