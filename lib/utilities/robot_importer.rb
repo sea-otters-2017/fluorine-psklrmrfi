@@ -1,6 +1,6 @@
 module RobotImporter
   def self.import_from(options)
-    products_hash = 
+    # products_hash = 
   end
 
   private
