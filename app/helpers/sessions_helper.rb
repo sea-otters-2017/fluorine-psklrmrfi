@@ -12,6 +12,7 @@ module SessionsHelper
 
   def logout
     session[:user_id] = nil
+    session[:admin] = false
   end
 
 end
