@@ -10,4 +10,12 @@ class Robot < ApplicationRecord
     self.update_attribute(:in_stock, true)
   end
 
+  def self.in_stock
+    self.all.where(in_stock: true)
+  end
+
+  def self.on_order
+    self.all.where(in_stock: false)
+  end
+
 end
