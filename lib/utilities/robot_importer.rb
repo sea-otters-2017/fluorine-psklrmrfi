@@ -20,21 +20,11 @@ module RobotImporter
   end
 
   def self.update_product(model, manufacturer)
-    puts 'update product!!!!'
     producer = Manufacturer.find_by(name: manufacturer)
-    p producer
     Product.find_or_create_by(model_number: model['modelNo']) do |product|
-      p product
       product.height = model['height']
       product.weight = model['weight']
-      p product
       product.manufacturer = producer
-      p product
     end
   end
 end
-
-=begin
-require "#{Rails.root}/lib/utilities/robot_importer"
-RobotImporter.import_from(api_url: "http://jordankamin.com/robots_api/robots.json")
-=end
