@@ -19,9 +19,24 @@ FactoryGirl.define do
   factory :robot do
     name {Faker::StarWars.droid}
     association :product, factory: :product
-    in_stock false
+    in_stock true
+    trait :available do
+      available true
+    end
+    trait :sold do
+      available false
+    end
     trait :on_order do
       in_stock false
     end
+    trait :late do
+      expected_date { Time.now - 7.days }
+    end
   end
 end
+
+=begin
+
+require 'factory_girl_rails'
+
+=end
