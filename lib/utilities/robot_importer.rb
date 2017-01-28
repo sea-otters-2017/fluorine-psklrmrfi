@@ -24,13 +24,17 @@ module RobotImporter
     Product.find_or_create_by(model_number: model['modelNo']) do |product|
       product.height = model['height']
       product.weight = model['weight']
-      product.price = model['price']
+      product.price = parse_price(model['price'])
       product.manufacturer = producer
     end
   end
-end
 
-=begin
-require "#{Rails.root}/lib/utilities/robot_importer"
-RobotImporter.import_from(api_url: "http://jordankamin.com/robots_api/robots.json")
-=end
+  def self.parse_price(string_price)
+    string_price
+    # take string price
+    # remove dollar sign at front
+    # convert to integer
+    # save as number of cents
+    # output integer
+  end
+end
