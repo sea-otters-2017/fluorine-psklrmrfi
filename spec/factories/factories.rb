@@ -23,5 +23,8 @@ FactoryGirl.define do
     trait :on_order do
       in_stock false
     end
+    trait :late do
+      expected_date { Time.now - 7.days }
+    end
   end
 end
