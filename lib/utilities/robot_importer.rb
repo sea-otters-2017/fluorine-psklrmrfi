@@ -24,6 +24,7 @@ module RobotImporter
     Product.find_or_create_by(model_number: model['modelNo']) do |product|
       product.height = model['height']
       product.weight = model['weight']
+      product.price = model['price']
       product.manufacturer = producer
     end
   end
