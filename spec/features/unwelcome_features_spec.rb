@@ -10,6 +10,6 @@ RSpec.feature 'UnwelcomeController', :type => :feature do
   scenario "User clicks the 'No' button" do
     visit root_path
     click_link "No"
-    expect(page).to have_css("#login-button")
+    expect(page).to have_css("#inventory-title")
   end
 end
