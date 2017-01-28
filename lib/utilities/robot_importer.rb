@@ -29,12 +29,8 @@ module RobotImporter
     end
   end
 
-  def self.parse_price(string_price)
-    string_price
-    # take string price
-    # remove dollar sign at front
-    # convert to integer
-    # save as number of cents
-    # output integer
+  def self.parse_price(price)
+    price.delete('$.')
+    price.to_i
   end
 end
