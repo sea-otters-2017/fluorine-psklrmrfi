@@ -94,4 +94,42 @@ RSpec.describe RobotsController, type: :controller do
       end
     end
   end
+
+  describe "GET #edit" do
+    before(:each) do
+      get :edit, params: { id: robot.id }, session: {'user_id': user.id }
+    end
+    it "responds with status code 200" do
+      expect(response).to have_http_status 200
+    end
+
+    it "assigns the correct robot as @robot" do
+      expect(assigns(:robot)).to eq(robot)
+    end
+
+    it "renders the :edit template" do
+      expect(response).to render_template(:edit)
+    end
+  end
+
+  describe "PUT #update" do
+    before(:each) do
+      put :update,
+          params: { id: robot.id,
+                    robot: new_robot.attributes,
+                    product_id: new_robot.product.id },
+          session: {'user_id': user.id }
+    end
+    it "responds with status code 302" do
+      expect(response).to have_http_status 302
+    end
+
+    it "assigns the correct robot as @robot" do
+      expect(assigns(:robot)).to eq(robot)
+    end
+
+    it "redirects to robot show page" do
+      expect(response).to redirect_to Robot.last
+    end
+  end
 end
