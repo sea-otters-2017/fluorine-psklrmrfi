@@ -4,7 +4,8 @@
 <p><%= @product.weight %> tons</p>
 <p><%= @product.manufacturer.name %></p>
 
-<%= render 'robots/form', robot: Robot.new %>
-
+<% if session[:admin] %>
+  <%= render 'robots/form', robot: Robot.new %>
+<% end %>
 <!-- Show all the robots in stock or on order that match this product id;
 link to their show page -->
