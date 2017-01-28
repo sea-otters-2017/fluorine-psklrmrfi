@@ -6,7 +6,7 @@
       <% Robot.in_stock.each do |robot| %>
         <div class="in-stock-robot shadow">
           <h3><%= link_to robot.name, robot %></h3>
-          <p><%= "Model No: #{robot.id}" %></p>
+          <p><%= "Model No: #{robot.product.model_number}" %></p>
         </div>
       <% end %>
   </div>
