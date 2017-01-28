@@ -9,6 +9,6 @@
 <% else %>
   <h3>Buy one of these 'bots!</h3>
   <% @product.robots.each do |robot| %>
-    <%= link_to robot.name, robot_path %>
+    <%= link_to robot.name, robot_path(robot) %>
   <% end %>
 <% end %>
