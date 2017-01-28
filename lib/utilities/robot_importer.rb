@@ -31,6 +31,5 @@ module RobotImporter
 
   def self.parse_price(price)
     price.delete('$.')
-    price.to_i
   end
 end
