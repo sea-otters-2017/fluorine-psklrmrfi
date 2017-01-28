@@ -27,7 +27,7 @@ body {
 
 nav {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   height: 60px;
   background: #BBB;
@@ -51,7 +51,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  padding: 20px 0;
+  padding: 20px;
   margin-right: 3em;
   font-size: 0.9em;
   height: 20px;
@@ -80,15 +80,15 @@ li#psklrmrfi-link a {
 }*/
 
 .outside-container {
-  width: 850px;
+  max-width: 850px;
 }
 
 #in-stock-container, #on-order-container {
-  width: 350px;
+  max-width: 350px;
   padding: 10px 20px;
   color: lightgray;
   background-color: #555;
-  border: 2px solid rgba(0, 255, 0, 0.57);;
+  border: 2px solid rgba(0, 255, 0, 0.57);
 }
 
 #in-stock-container {
@@ -100,7 +100,15 @@ li#psklrmrfi-link a {
 }
 
 #inventory-title {
-  margin: 30px auto;
+  margin: 60px auto;
+}
+
+#notice, #error {
+  text-align: center;
+}
+
+.past-due p {
+  color: red;
 }
 
 .in-stock-robot, .on-order-robot {
@@ -113,17 +121,37 @@ li#psklrmrfi-link a {
   border-radius: 10px;
 }
 
-.robot-show-container {
-  background-color: #444;
+#edit-robot-container, .robot-show-container, #manufacturers-container, #products-container {
+  background-color: #BBB;
   max-width: 400px;
   margin: auto;
   padding: 20px;
-  color: lightgray;
+  color: black;
+  border: 2px solid darkgray;
   border-radius: 10px;
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
 }
 
 .robot-edit-links {
   margin-top: 20px;
+}
+
+#unwelcome-page {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+#unwelcome-page a {
+  padding: 0 3em;
+}
+
+.one-column {
+  max-width: 350px;
+}
+
+.actions {
+  padding: 10px 0;
 }
 
 a:link    { color: #ec007f }
@@ -161,4 +189,53 @@ nav a:active  { color: #222 }
 
 .clear {
   clear: both;
+}
+
+#error {
+  color: rgb(150, 0, 0);
+}
+
+#notice {
+  color: rgb(0, 150, 0);
+  font-weight: bold;
+}
+
+#error, #notice {
+  padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  #in-stock-container, #on-order-container, .in-stock-robot, .on-order-robot {
+    float:none;
+    margin-bottom: 10px;
+  }
+
+  #in-stock-container, #on-order-container {
+    margin: auto;
+    max-width: 70vw;
+    margin-bottom: 15px;
+  }
+
+  body {
+    font-size: 1.8em;
+    margin-top: 100px;
+  }
+
+  nav li {
+    font-size: 1em;
+    padding: 25px, 0;
+  }
+
+  .in-stock-robot, .on-order-robot {
+    padding: 15px;
+  }
+
+  .in-stock-robot *, .on-order-robot * {
+    margin: 15px;
+  }
+
+  nav {
+    height: 80px;
+  }
+
 }

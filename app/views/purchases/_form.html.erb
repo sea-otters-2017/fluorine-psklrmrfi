@@ -1,0 +1,30 @@
+<h2>buy this robot</h2>
+<%= form_for(purchase) do |f| %>
+  <% if purchase.errors.any? %>
+    <div class="errors">
+      <h2><%= pluralize(purchase.errors, 'purchase-error') %></h2>
+    </div>
+    <ul>
+      <% purchase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, 'your name' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, 'your email' %>
+    <%= f.email_field :email %>
+  </div>
+
+  <%= hidden_field_tag :robot_id, @robot.id %>
+
+  <div class="actions">
+    <%= f.submit 'buy this robot' %>
+  </div>
+
+<% end %>

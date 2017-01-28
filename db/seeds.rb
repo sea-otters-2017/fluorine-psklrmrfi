@@ -7,15 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "#{Rails.root}/lib/utilities/robot_importer"
 
-# Robot.delete_all
-# Product.delete_all
-# Manufacturer.delete_all
+Robot.delete_all
+Product.delete_all
+Manufacturer.delete_all
 
 robot_url = "http://jordankamin.com/robots_api/robots.json"
 RobotImporter.import_at_interval(api_url: robot_url, interval: 120)
 
-# 20.times do |n|
-#   Robot.create!(  name: Faker::StarWars.droid,
-#                   in_stock: [true, false].sample,
-#                   product_id: Product.all.sample.id )
-# end
+10.times do |n|
+  robot = Robot.create!(  name: Faker::StarWars.droid,
+                  in_stock: true,
+                  available: [true, false].sample,
+                  product_id: Product.all.sample.id )
+  robot.expected_date = Time.now + rand(-7..21).days
+  robot.save
+end
+
+10.times do |n|
+  robot = Robot.create!(  name: Faker::StarWars.droid,
+                  in_stock: false,
+                  available: false,
+                  product_id: Product.all.sample.id )
+  robot.expected_date = Time.now + rand(-7..21).days
+  robot.save
+end
