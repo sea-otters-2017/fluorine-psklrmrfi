@@ -16,7 +16,7 @@
     <% Robot.on_order.each do |robot| %>
       <div class="on-order-robot">
         <h3><%= link_to robot.name, robot %></h3>
-          <p><%= "Expected: #{robot.created_at}" %></p>      </div>
+          <p><%= "Expected: #{DateHelper.prettify(robot.created_at)}" %></p>      </div>
     <% end %>
   </div>
   <div class='clear'></div>
