@@ -4,6 +4,7 @@
   <p><%= "Weight: #{@robot.product.weight} tons" %></p>
   <p><%= "Model: #{@robot.product.model_number}" %></p>
   <p><%= "Manufacturer: #{@robot.manufacturer.name}" %></p>
+  <p><%= "Cost: $#{display_price(@robot.product.price)}" %></p>
 </div>
 
 <% if session[:admin] %>
