@@ -11,7 +11,7 @@ class Robot < ApplicationRecord
   before_validation :set_expected_date, on: :create
 
   def mark_received
-    self.update_attribute(:in_stock, true)
+    self.update_attributes(in_stock: true, available: true)
   end
 
   def self.in_stock
