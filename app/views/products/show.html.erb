@@ -1,18 +1,21 @@
-<h2><%= @product.model_number%></h2>
+<div class='robot-show-container shadow'>
+  <h2>Model: <%= @product.model_number%></h2>
 
-<p><%= @product.height %> yards</p>
-<p><%= @product.weight %> tons</p>
-<p><%= @product.manufacturer.name %></p>
+  <p>Height: <%= @product.height %> yards</p>
+  <p>Weight: <%= pluralize(@product.weight, 'ton') %> </p>
+  <p>Manufacturer: <%= link_to @product.manufacturer.name, manufacturer_path(@product.manufacturer) %></p>
+  <p>Cost: $<%= display_price(@product.price) %></p>
 
-<% if session[:admin] %>
-  <%= render 'robots/form', robot: Robot.new %>
-<% else %>
-  <% if !@product.robots.empty? %>
-    <h3>Buy one of these bots!</h3>
-    <% @product.robots.each do |robot| %>
-      <%= link_to robot.name, robot_path(robot) %>
-    <% end %>
+  <% if session[:admin] %>
+    <%= render 'robots/form', robot: Robot.new %>
   <% else %>
-    <h3>There are no <%= @product.model_number %>s in stock</h3>
+    <% if !@product.robots.empty? %>
+      <h3>Buy one of these bots!</h3>
+      <% @product.robots.each do |robot| %>
+        <%= link_to robot.name, robot_path(robot) %>
+      <% end %>
+    <% else %>
+      <h3>There are no <%= @product.model_number %>s in stock</h3>
+    <% end %>
   <% end %>
-<% end %>
+</div>

@@ -2,20 +2,22 @@
   <h1><%= "Robot: #{@robot.name}" %></h1>
   <p><%= "Height: #{@robot.product.height} yards" %></p>
   <p><%= "Weight: #{@robot.product.weight} tons" %></p>
-  <p><%= "Model: #{@robot.product.model_number}" %></p>
-  <p><%= "Manufacturer: #{@robot.manufacturer.name}" %></p>
+  <% product = @robot.product # Set the product variable %>
+  <% product.manufacturer.id # Use the product variable to get manufacturer%>
+  <p>Model: <%= link_to @robot.product.model_number, [product.manufacturer, product] %></p>
+  <p><%= "Cost: $#{display_price(@robot.product.price)}" %></p>
+  <p>Manufacturer: <%= link_to @robot.manufacturer.name, manufacturer_path(@robot.manufacturer) %></p>
   <div class=<%= 'past-due' if @robot.past_due? %>>
     <p><%= "Expected Date: #{@robot.expected_date}" %></p>
   </div>
+  <% if session[:admin] %>
+    <div class='t-a robot-edit-links'>
+      <%= link_to "edit #{@robot.name}", edit_robot_path %>
+    </div>
+    <div class='t-a robot-edit-links'>
+      <%= link_to 'mark received', mark_received_robot_path(@robot) unless @robot.in_stock %>
+    </div>
+  <% else %>
+    <%= render 'purchases/form', purchase: Purchase.new %>
+  <% end %>
 </div>
-
-<% if session[:admin] %>
-  <div class='t-a robot-edit-links'>
-    <%= link_to "edit #{@robot.name}", edit_robot_path %>
-  </div>
-  <div class='t-a robot-edit-links'>
-    <%= link_to 'mark received', mark_received_robot_path(@robot) unless @robot.in_stock %>
-  </div>
-<% else %>
-  <%= render 'purchases/form', purchase: Purchase.new %>
-<% end %>
