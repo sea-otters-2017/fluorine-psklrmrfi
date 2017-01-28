@@ -164,11 +164,12 @@ nav a:active  { color: #222 }
 }
 
 #error {
-  color: rgb(255, 0, 0);
+  color: rgb(150, 0, 0);
 }
 
 #notice {
-  color: rgba(0, 255, 0);
+  color: rgb(0, 150, 0);
+  font-weight: bold;
 }
 
 #error, #notice {
