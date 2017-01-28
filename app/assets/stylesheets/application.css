@@ -88,7 +88,7 @@ li#psklrmrfi-link a {
   padding: 10px 20px;
   color: lightgray;
   background-color: #555;
-  border: 2px solid rgba(0, 255, 0, 0.57);;
+  border: 2px solid rgba(0, 255, 0, 0.57);
 }
 
 #in-stock-container {
@@ -117,13 +117,15 @@ li#psklrmrfi-link a {
   border-radius: 10px;
 }
 
-.robot-show-container {
-  background-color: #444;
+.robot-show-container, #manufacturers-container, #products-container {
+  background-color: #BBB;
   max-width: 400px;
   margin: auto;
   padding: 20px;
-  color: lightgray;
+  color: black;
+  border: 2px solid darkgray;
   border-radius: 10px;
+  box-shadow: 0 0 1.3rem rgba(0,0,0,0.25);
 }
 
 .robot-edit-links {
