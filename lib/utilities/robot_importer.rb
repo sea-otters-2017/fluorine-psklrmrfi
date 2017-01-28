@@ -1,8 +1,23 @@
 module RobotImporter
+
+  def self.import_at_interval(options)
+    p "Import at interval"
+    Thread.new do
+      60.times do
+        p "New thread"
+        p options[:interval]
+        sleep options[:interval]
+        p 'importing'
+        # import_from(options)
+      end
+    end
+  end
+
   def self.import_from(options)
     api_data = get_json(options[:api_url])
     manufacturers = api_data['manufacturers']
     manufacturers.each do |manufacturer|
+      p manufacturer
       update_manufacturer(manufacturer['name'])
       manufacturer['models'].each do |product|
         update_product(product, manufacturer['name'])
