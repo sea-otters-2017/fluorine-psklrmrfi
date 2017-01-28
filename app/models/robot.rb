@@ -10,6 +10,9 @@ class Robot < ApplicationRecord
 
   before_validation :set_expected_date, on: :create
 
+  scope :available, ->() { where(available: true) }
+  scope :sold, ->() { where(available: false) }
+
   def mark_received
     self.update_attribute(:in_stock, true)
   end
