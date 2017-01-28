@@ -132,6 +132,20 @@ li#psklrmrfi-link a {
   margin-top: 20px;
 }
 
+#unwelcome-page {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+#unwelcome-page a {
+  padding: 0 3em;
+}
+
+.actions {
+  padding: 10px 0;
+}
+
 a:link    { color: #ec007f }
 a:visited { color: darkred }
 a:hover   { color: darkorange }
