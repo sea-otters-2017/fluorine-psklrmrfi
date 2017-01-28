@@ -3,7 +3,7 @@
 <p><%= @product.height %> yards</p>
 <p><%= @product.weight %> tons</p>
 <p><%= @product.manufacturer.name %></p>
-<p>$<%= @product.price %></p>
+<p>$<%= price(@product.price) %></p>
 
 <% if session[:admin] %>
   <%= render 'robots/form', robot: Robot.new %>
