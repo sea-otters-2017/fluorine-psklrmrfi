@@ -10,7 +10,7 @@
   <div class=<%= 'past-due' if @robot.past_due? %>>
     <p><%= "Expected Date: #{@robot.expected_date}" %></p>
   </div>
-  <% if session[:admin] %>
+  <% if user_is_admin? %>
     <div class='t-a robot-edit-links'>
       <%= link_to "edit #{@robot.name}", edit_robot_path %>
     </div>

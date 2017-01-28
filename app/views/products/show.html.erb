@@ -6,7 +6,7 @@
   <p>Manufacturer: <%= link_to @product.manufacturer.name, manufacturer_path(@product.manufacturer) %></p>
   <p>Cost: $<%= display_price(@product.price) %></p>
 
-  <% if session[:admin] %>
+  <% if user_is_admin? %>
     <%= render 'robots/form', robot: Robot.new %>
   <% else %>
     <% if !@product.robots.empty? %>

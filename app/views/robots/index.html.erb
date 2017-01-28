@@ -10,14 +10,16 @@
         </div>
       <% end %>
   </div>
-
-  <div id="on-order-container" class="shadow">
-    <h2 id='on-order-title' class='underline'>On Order</h2>
-    <% Robot.on_order.each do |robot| %>
-      <div class="on-order-robot <%= 'past-due' if robot.past_due? %>">
-        <h3><%= link_to robot.name, robot %></h3>
-          <p><%= "Expected: #{DateHelper.prettify(robot.expected_date)}" %></p>      </div>
-    <% end %>
-  </div>
+  <% if user_is_admin? %>
+    <div id="on-order-container" class="shadow">
+      <h2 id='on-order-title' class='underline'>On Order</h2>
+      <% Robot.on_order.each do |robot| %>
+        <div class="on-order-robot <%= 'past-due' if robot.past_due? %>">
+          <h3><%= link_to robot.name, robot %></h3>
+          <p><%= "Expected: #{DateHelper.prettify(robot.expected_date)}" %></p>      
+        </div>
+      <% end %>
+    </div>
+  <% end %>
   <div class='clear'></div>
 </div>
