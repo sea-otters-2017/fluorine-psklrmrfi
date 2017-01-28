@@ -33,6 +33,12 @@ FactoryGirl.define do
       expected_date { Time.now - 7.days }
     end
   end
+
+  factory :purchase do
+    name { Faker::StarWars.character }
+    email { Faker::Internet.email }
+    association :robot, factory: :robot
+  end
 end
 
 =begin
