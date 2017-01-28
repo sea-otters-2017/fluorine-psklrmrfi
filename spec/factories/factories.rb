@@ -12,6 +12,7 @@ FactoryGirl.define do
     model_number {"XYZ-#{rand(100000..999999)}"}
     height {rand(1..200)}
     weight {rand(5..25)}
+    price {rand(1..100)*10_000}
     association :manufacturer, factory: :manufacturer
   end
 
