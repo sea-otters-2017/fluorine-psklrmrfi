@@ -1,8 +1,4 @@
 class PurchasesController < ApplicationController
-  # def new
-    # do I need this?
-    # form partial appears on Robot show page
-  # end
 
   def create
     purchase = Purchase.new(purchase_params)
