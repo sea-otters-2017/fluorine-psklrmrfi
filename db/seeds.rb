@@ -14,10 +14,19 @@ Manufacturer.delete_all
 robot_url = "http://jordankamin.com/robots_api/robots.json"
 RobotImporter.import_from(api_url: robot_url)
 
-20.times do |n|
+10.times do |n|
   robot = Robot.create!(  name: Faker::StarWars.droid,
-                  in_stock: [true, false].sample,
+                  in_stock: true,
                   available: [true, false].sample,
+                  product_id: Product.all.sample.id )
+  robot.expected_date = Time.now + rand(-7..21).days
+  robot.save
+end
+
+10.times do |n|
+  robot = Robot.create!(  name: Faker::StarWars.droid,
+                  in_stock: false,
+                  available: false,
                   product_id: Product.all.sample.id )
   robot.expected_date = Time.now + rand(-7..21).days
   robot.save
