@@ -6,6 +6,8 @@
 
 <% if session[:admin] %>
   <%= render 'robots/form', robot: Robot.new %>
-<% end %>
+<% else %>
+  <%#= @product. %>
 <!-- Show all the robots in stock or on order that match this product id;
 link to their show page -->
+<% end %>
