@@ -16,5 +16,5 @@ Rails.application.routes.draw do
     resources :products
   end
 
-  resources :purchases, only: [:new, :create]
+  resources :purchases, only: [:create]
 end
