@@ -4,6 +4,9 @@
   <p><%= "Weight: #{@robot.product.weight} tons" %></p>
   <p><%= "Model: #{@robot.product.model_number}" %></p>
   <p><%= "Manufacturer: #{@robot.manufacturer.name}" %></p>
+  <div class=<%= 'past-due' if @robot.past_due? %>>
+    <p><%= "Expected Date: #{@robot.expected_date}" %></p>
+  </div>
 </div>
 
 <% if session[:admin] %>
@@ -16,4 +19,3 @@
 <% else %>
   <%= render 'purchases/form', purchase: Purchase.new %>
 <% end %>
-

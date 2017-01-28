@@ -103,6 +103,10 @@ li#psklrmrfi-link a {
   margin: 60px auto;
 }
 
+.past-due p {
+  color: red;
+}
+
 .in-stock-robot, .on-order-robot {
   width: 90%;
   margin: 10px auto;
