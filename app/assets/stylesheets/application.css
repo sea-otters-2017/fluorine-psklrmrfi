@@ -103,6 +103,10 @@ li#psklrmrfi-link a {
   margin: 60px auto;
 }
 
+#notice, #error {
+  text-align: center;
+}
+
 .past-due p {
   color: red;
 }
@@ -140,6 +144,10 @@ li#psklrmrfi-link a {
 
 #unwelcome-page a {
   padding: 0 3em;
+}
+
+.one-column {
+  max-width: 350px;
 }
 
 .actions {
