@@ -15,4 +15,7 @@ module SessionsHelper
     session[:admin] = false
   end
 
+  def user_is_admin?
+    return session[:admin]
+  end
 end

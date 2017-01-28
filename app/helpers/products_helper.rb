@@ -1,6 +1,6 @@
 module ProductsHelper
   def display_price(price)
-    if session[:admin]
+    if user_is_admin?
       return price / 100
     else
       return (price / 100) * 2

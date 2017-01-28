@@ -10,7 +10,7 @@
         </div>
       <% end %>
   </div>
-  <% if session[:admin] %>
+  <% if user_is_admin? %>
     <div id="on-order-container" class="shadow">
       <h2 id='on-order-title' class='underline'>On Order</h2>
       <% Robot.on_order.each do |robot| %>
