@@ -175,10 +175,6 @@ nav a:active  { color: #222 }
   padding: 10px;
 }
 
-/*#login-form-div {
-  margin: 15px;
-}*/
-
 @media screen and (max-width: 1000px) {
   #in-stock-container, #on-order-container, .in-stock-robot, .on-order-robot {
     float:none;
