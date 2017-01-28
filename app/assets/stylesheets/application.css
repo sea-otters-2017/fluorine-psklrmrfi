@@ -27,7 +27,7 @@ body {
 
 nav {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   height: 60px;
   background: #BBB;
@@ -80,11 +80,11 @@ li#psklrmrfi-link a {
 }*/
 
 .outside-container {
-  width: 850px;
+  max-width: 850px;
 }
 
 #in-stock-container, #on-order-container {
-  width: 350px;
+  max-width: 350px;
   padding: 10px 20px;
   color: lightgray;
   background-color: #555;
@@ -161,4 +161,40 @@ nav a:active  { color: #222 }
 
 .clear {
   clear: both;
+}
+
+@media screen and (max-width: 1000px) {
+  #in-stock-container, #on-order-container, .in-stock-robot, .on-order-robot {
+    float:none;
+    margin-bottom: 10px;
+  }
+
+  #in-stock-container, #on-order-container {
+    margin: auto;
+    max-width: 70vw;
+    margin-bottom: 15px;
+  }
+
+  body {
+    font-size: 1.8em;
+    margin-top: 100px;
+  }
+
+  nav li {
+    font-size: 1em;
+    padding: 25px, 0;
+  }
+
+  .in-stock-robot, .on-order-robot {
+    padding: 15px;
+  }
+
+  .in-stock-robot *, .on-order-robot * {
+    margin: 15px;
+  }
+
+  nav {
+    height: 80px;
+  }
+
 }
