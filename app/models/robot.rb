@@ -10,9 +10,6 @@ class Robot < ApplicationRecord
 
   before_validation :set_expected_date, on: :create
 
-  scope :available, ->() { where(available: true) }
-  scope :sold, ->() { where(available: false) }
-
   def mark_received
     self.update_attribute(:in_stock, true)
   end
@@ -23,6 +20,14 @@ class Robot < ApplicationRecord
 
   def self.on_order
     self.all.where(in_stock: false)
+  end
+
+  def self.available
+    self.all.where(available: true)
+  end
+
+  def self.sold
+    self.all.where(available: false)
   end
 
   def past_due?
