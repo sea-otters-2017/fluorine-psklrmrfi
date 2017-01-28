@@ -3,11 +3,12 @@ class PurchasesController < ApplicationController
     purchase = Purchase.new(purchase_params)
     purchase.robot_id = params[:robot_id]
     if purchase.save
-      flash[:notice] = 'Your robot has been purchased.'
+      flash[:notice] = 'your robot has been purchased.'
+      purchase.robot.update_attribute(:available, false)
       redirect_to robots_path
     else
-      flash[:notice] = 'Something went wrong.'
-      # render
+      flash[:error] = 'purchases require a name and valid email'
+      redirect_to robot_path(purchase.robot)
     end
   end
 
