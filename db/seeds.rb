@@ -17,6 +17,7 @@ RobotImporter.import_from(api_url: robot_url)
 20.times do |n|
   robot = Robot.create!(  name: Faker::StarWars.droid,
                   in_stock: [true, false].sample,
+                  available: [true, false].sample,
                   product_id: Product.all.sample.id )
   robot.expected_date = Time.now + rand(-7..21).days
   robot.save
