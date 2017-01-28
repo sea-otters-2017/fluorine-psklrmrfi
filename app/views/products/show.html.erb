@@ -4,4 +4,15 @@
 <p><%= @product.weight %> tons</p>
 <p><%= @product.manufacturer.name %></p>
 
-<%= render 'robots/form', robot: Robot.new %>
+<% if session[:admin] %>
+  <%= render 'robots/form', robot: Robot.new %>
+<% else %>
+  <% if !@product.robots.empty? %>
+    <h3>Buy one of these bots!</h3>
+    <% @product.robots.each do |robot| %>
+      <%= link_to robot.name, robot_path(robot) %>
+    <% end %>
+  <% else %>
+    <h3>There are no <%= @product.model_number %>s in stock</h3>
+  <% end %>
+<% end %>

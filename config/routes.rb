@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :manufacturers, only: [:index, :show] do
     resources :products
   end
+
+  resources :purchases, only: [:create]
 end

@@ -14,8 +14,6 @@
     <%= link_to 'mark received', mark_received_robot_path(@robot) unless @robot.in_stock %>
   </div>
 <% else %>
-  <div class='t-a robot-edit-links'>
-    <%= link_to 'order this robot', manufacturer_product_path(@robot) %>
-  </div>
+  <%= render 'purchases/form', purchase: Purchase.new %>
 <% end %>
 
