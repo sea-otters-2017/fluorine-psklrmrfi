@@ -4,6 +4,51 @@ RSpec.describe Robot, type: :model do
   subject(:robot){ FactoryGirl.create(:robot) }
   subject(:on_order_robot){ FactoryGirl.create(:robot, :on_order) }
   subject(:late_robot){ FactoryGirl.create(:robot, :on_order, :late) }
+  subject(:available_robot){ FactoryGirl.create(:robot, :available) }
+  subject(:sold_robot){ FactoryGirl.create(:robot, :sold) }
+
+  describe 'Robot::class_methods' do
+    describe 'Robot.in_stock' do
+      it 'includes robots in stock' do
+        robot
+        expect(Robot.in_stock.length).to eq(1)
+      end
+      it 'does not include robots on order' do
+        on_order_robot
+        expect(Robot.in_stock.length).to eq(0)
+      end
+    end
+    describe 'Robot.on_order' do
+      it 'includes robots on order' do
+        on_order_robot
+        expect(Robot.on_order.length).to eq(1)
+      end
+      it 'does not include robots in stock' do
+        robot
+        expect(Robot.on_order.length).to eq(0)
+      end
+    end
+    describe 'Robot.available' do
+      it 'includes robots that are available' do
+        available_robot
+        expect(Robot.available.length).to eq(1)
+      end
+      it 'does not include robots that arent available' do
+        robot
+        expect(Robot.available.length).to eq(0)
+      end
+    end
+    describe 'Robot.sold' do
+      it 'includes robots on order' do
+        sold_robot
+        expect(Robot.sold.length).to eq(1)
+      end
+      it 'does not include robots in stock' do
+        available_robot
+        expect(Robot.sold.length).to eq(0)
+      end
+    end
+  end
 
   describe '#mark_received' do
     it 'marks the robot as in stock' do
