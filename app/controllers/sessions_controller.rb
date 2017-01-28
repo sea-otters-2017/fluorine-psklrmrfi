@@ -10,13 +10,13 @@ class SessionsController < ApplicationController
       set_user(user)
       redirect_to robots_path
     else
-      redirect_to root_path, notice: "Not a website! Go away."
+      redirect_to root_path, :flash => { :error => "Not a website! Go away." }
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, notice: "Nothing to see here!..."
+    redirect_to root_path, :flash => { :error => "Nothing to see here!..." }
   end
 
 end
