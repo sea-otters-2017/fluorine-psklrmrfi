@@ -60,7 +60,10 @@ RSpec.describe RobotsController, type: :controller do
     let(:successful_post) do
       post :create, params: { robot: new_robot.attributes, product_id: new_robot.product.id }
     end
-
+    let(:unsuccessful_post) do
+      post :create, params: { robot: new_robot.attributes }
+    end
+    describe 'for a successful post' do
       it "responds with status code 302" do
         successful_post
         expect(response).to have_http_status 302
@@ -74,7 +77,21 @@ RSpec.describe RobotsController, type: :controller do
         successful_post
         expect(response).to redirect_to Robot.last
       end
+    end
+    describe 'for a unsuccessful post' do
+      it "responds with status code 200" do
+        unsuccessful_post
+        expect(response).to have_http_status 200
+      end
+
+      it "does not create a new robot" do
+        expect{unsuccessful_post}.to_not change(Robot, :count)
+      end
+
+      it "re-renders the new robot" do
+        unsuccessful_post
+        expect(response).to render_template :new
+      end
+    end
   end
-
-
 end
