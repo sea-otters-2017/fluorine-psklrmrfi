@@ -34,3 +34,9 @@ FactoryGirl.define do
     end
   end
 end
+
+=begin
+
+require 'factory_girl_rails'
+
+=end
