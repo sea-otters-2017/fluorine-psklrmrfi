@@ -23,7 +23,7 @@ class Robot < ApplicationRecord
   end
 
   def self.available
-    self.all.where(available: true)
+    self.all.where(available: true).where(in_stock: true)
   end
 
   def self.sold
