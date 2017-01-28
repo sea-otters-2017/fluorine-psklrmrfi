@@ -5,9 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
   def require_login
-    unless user_logged_in?
-      flash[:notice] = "Nothing to see here!..."
-      redirect_to root_path
+    if user_logged_in?
+      session[:admin] = true
+    else
+      session[:admin] = false
     end
   end
 end

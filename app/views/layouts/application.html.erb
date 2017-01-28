@@ -10,12 +10,16 @@
 
   </head>
 
-  <% if user_logged_in? %>
+  <% if !current_page?(root_path) || current_page?(login_path) %>
     <nav>
       <ul>
         <li id='psklrmrfi-link'><%= link_to 'PSKLRMRFI', robots_path %></li>
-        <li><%= link_to 'new order', manufacturers_path %></li>
-        <li><%= link_to 'logout', logout_path, method: :delete %></li>
+        <li><%= link_to 'view manufacturers', manufacturers_path %></li>
+        <% if session[:admin] %>
+          <li><%= link_to 'logout', logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'log in', login_path %></li>
+        <% end %>
       </ul>
     </nav>
   <% end %>
