@@ -66,7 +66,7 @@ Rails.application.configure do
   
   config.action_mailer.smtp_settings = {   
     openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
-    ssl: true,
+#     ssl: true,
     enable_starttls_auto: true,  #this is the important stuff!
     address: 'smtp.peak.org',
     port: 587,
