@@ -12,11 +12,26 @@ RSpec.describe SessionsController do
 
   describe 'POST #create' do
     describe 'successful login' do
-      it 'displays the login page' do
-        p controller.params
-        post :create, session: { user_id: user.id}
-        expect(response).to have_http_status 200
+      before(:each) do
+        post :create,
+        params: {session: {password: user.password}},
+        session: {'user_id': user.id }
       end
+
+      it { is_expected.to redirect_to robots_path }
+      it {is_expected.to set_session}
+    end
+
+    describe 'unsuccessful login' do
+      before(:each) do
+        post :create,
+        params: {session: {password: 'wrong'}},
+        session: {'user_id': user.id }
+      end
+
+      it { is_expected.to redirect_to root_path }
+      it { is_expected.to set_flash[:error] }
+      it { is_expected.not_to set_session[:admin] }
     end
   end
 
@@ -31,6 +46,7 @@ RSpec.describe SessionsController do
       controller.session[:user_id] = user.id
       delete :destroy
       expect(response).to redirect_to root_path
+      expect(controller).to set_flash
     end
 
     it 'destroys the session' do
