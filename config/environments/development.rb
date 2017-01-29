@@ -32,7 +32,18 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
   ActionMailer::Base.delivery_method = :smtp
-
+  
+  config.action_mailer.smtp_settings = {   
+    openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
+    # ssl: true,
+    enable_starttls_auto: true,  #this is the important stuff!
+    address: 'smtp.peak.org',
+    port: 587,
+    domain: 'peak.org',
+    authentication: :plain,
+    user_name: ENV['COMMISH_EMAIL'],
+    password: ENV['COMMISH_PWD']
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
