@@ -12,7 +12,7 @@ Product.delete_all
 Manufacturer.delete_all
 
 robot_url = "http://jordankamin.com/robots_api/robots.json"
-RobotImporter.import_at_interval(api_url: robot_url, interval: 120)
+RobotImporter.import_from(api_url: robot_url)
 
 10.times do |n|
   robot = Robot.create!(  name: Faker::StarWars.droid,
