@@ -4,7 +4,6 @@ module RobotImporter
     api_data = get_json(options[:api_url])
     manufacturers = api_data['manufacturers']
     manufacturers.each do |manufacturer|
-      p manufacturer
       update_manufacturer(manufacturer['name'])
       manufacturer['models'].each do |product|
         update_product(product, manufacturer['name'])
