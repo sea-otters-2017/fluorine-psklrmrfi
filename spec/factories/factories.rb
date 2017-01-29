@@ -2,6 +2,9 @@ FactoryGirl.define do
 
   factory :user do
     password 'supersecret'
+    trait :admin do
+
+    end
   end
 
   factory :manufacturer do
@@ -44,5 +47,6 @@ end
 =begin
 
 require 'factory_girl_rails'
+FactoryGirl.create(:user)
 
 =end

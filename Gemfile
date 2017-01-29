@@ -45,6 +45,7 @@ end
 group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'rack_session_access'
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rails-controller-testing'

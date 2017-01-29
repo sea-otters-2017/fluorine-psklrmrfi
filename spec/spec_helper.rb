@@ -14,6 +14,7 @@ SimpleCov.start 'rails'
 # the additional setup, and require it from the spec files that actually need
 # it.
 require 'capybara/rspec'
+require "rack_session_access/capybara"
 
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
