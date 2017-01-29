@@ -1,4 +1,4 @@
-# This is not a website.
+# This is not a website. [![Build Status](https://travis-ci.org/pholls/fluorine-psklrmrfi.svg?branch=master)](https://travis-ci.org/pholls/fluorine-psklrmrfi)
 
 ## PSKLRMRFI
 
