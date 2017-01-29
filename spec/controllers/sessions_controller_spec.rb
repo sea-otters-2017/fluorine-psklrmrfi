@@ -14,19 +14,17 @@ RSpec.describe SessionsController do
     describe 'successful login' do
       before(:each) do
         post :create,
-        params: {session: {password: user.password}},
-        session: {'user_id': user.id }
+        params: {session: {password: user.password}}
       end
 
       it { is_expected.to redirect_to robots_path }
-      it {is_expected.to set_session}
+      it { is_expected.to set_session }
     end
 
     describe 'unsuccessful login' do
       before(:each) do
         post :create,
-        params: {session: {password: 'wrong'}},
-        session: {'user_id': user.id }
+        params: {session: {password: 'wrong'}}
       end
 
       it { is_expected.to redirect_to root_path }
