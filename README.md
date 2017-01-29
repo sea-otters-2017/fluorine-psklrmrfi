@@ -1,6 +1,6 @@
 # This is not a website.
 
-## PSKLRMRFI
+## PSKLRMRFI [![Build Status](https://travis-ci.org/pholls/fluorine-psklrmrfi.svg?branch=master)](https://travis-ci.org/pholls/fluorine-psklrmrfi)
 
 ### Team: Fluorine
 
