@@ -1,5 +1,9 @@
 class PurchasesController < ApplicationController
   def create
+    if params[:supermutant] == 'yes'
+      redirect_to 'http://en.wikipedia.org/wiki/Pacifism'
+      return
+    end
     purchase = Purchase.new(purchase_params)
     purchase.robot_id = params[:robot_id]
     if purchase.save

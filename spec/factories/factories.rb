@@ -2,9 +2,6 @@ FactoryGirl.define do
 
   factory :user do
     password 'supersecret'
-    trait :admin do
-
-    end
   end
 
   factory :manufacturer do
