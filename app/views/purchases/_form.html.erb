@@ -23,6 +23,12 @@
 
   <%= hidden_field_tag :robot_id, @robot.id %>
 
+  <label for="supermutant-check">are you a supermutant?</label>
+  <select name="supermutant" id="supermutant-check">
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+  </select>
+
   <div class="actions">
     <%= f.submit 'buy this robot' %>
   </div>

@@ -1,15 +1,19 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ProductsHelper. For example:
-#
-# describe ProductsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe ProductsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'admin sees the wholesale price' do
+    let!(:user_is_admin?) { true }
+
+    it 'shows the actual price in dollars' do
+      expect(display_price(30000)).to eq 300
+    end
+  end
+
+  describe 'non-admin sees the retail price' do
+    let!(:user_is_admin?) { false }
+
+    it 'shows double the price in dollars' do
+      expect(display_price(30000)).to eq 600
+    end
+  end
 end

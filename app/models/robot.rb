@@ -37,7 +37,7 @@ class Robot < ApplicationRecord
 
   private
   def set_expected_date
-    self.expected_date = Time.now + 21.days
+    self.expected_date ||= Time.now + 21.days
   end
 
 end

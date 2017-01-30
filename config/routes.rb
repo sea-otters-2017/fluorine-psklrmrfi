@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :manufacturers, only: [:index, :show] do
-    resources :products
+    resources :products, only: [:show]
   end
 
   resources :purchases, only: [:create]
