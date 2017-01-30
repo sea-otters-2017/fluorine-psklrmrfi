@@ -37,9 +37,9 @@ Rails.application.configure do
     openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
     # ssl: true,
     enable_starttls_auto: true,  #this is the important stuff!
-    address: 'smtp.peak.org',
+    address: 'smtp.aol.com',
     port: 587,
-    domain: 'peak.org',
+    domain: 'aol.com',
     authentication: :plain,
     user_name: ENV['COMMISH_EMAIL'],
     password: ENV['COMMISH_PWD']
