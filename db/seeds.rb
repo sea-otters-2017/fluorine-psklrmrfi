@@ -34,4 +34,4 @@ end
   robot.save
 end
 
-User.create!(password: '123')
+User.create!(password: ENV['SITE_PWD'])
