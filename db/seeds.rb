@@ -11,6 +11,7 @@ require 'faker'
 Robot.delete_all
 Product.delete_all
 Manufacturer.delete_all
+User.delete_all
 
 robot_url = "http://jordankamin.com/robots_api/robots.json"
 RobotImporter.import_from(api_url: robot_url)
@@ -32,3 +33,5 @@ end
   robot.expected_date = Time.now + rand(-7..21).days
   robot.save
 end
+
+User.create!(password: '123')
