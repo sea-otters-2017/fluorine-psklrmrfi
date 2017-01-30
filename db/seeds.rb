@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "#{Rails.root}/lib/utilities/robot_importer"
+require 'faker'
 
 Robot.delete_all
 Product.delete_all
