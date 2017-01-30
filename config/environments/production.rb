@@ -62,7 +62,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
-  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.delivery_method = :sendmail
   
   config.action_mailer.smtp_settings = {   
     openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
@@ -71,7 +71,7 @@ Rails.application.configure do
     address: 'smtp.aol.com',
     port: 587,
     domain: 'aol.com',
-    authentication: :plain,
+    authentication: :login,
     user_name: ENV['COMMISH_EMAIL'],
     password: ENV['COMMISH_PWD']
   }
