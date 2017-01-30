@@ -16,5 +16,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+.env
+
 # ensure that coverage results are not tracked by Git
 coverage

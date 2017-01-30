@@ -26,10 +26,24 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
+  # Care if the mailer can't send.
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
+  ActionMailer::Base.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {   
+    openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
+    # ssl: true,
+    enable_starttls_auto: true,  #this is the important stuff!
+    address: 'smtp.peak.org',
+    port: 587,
+    domain: 'peak.org',
+    authentication: :plain,
+    user_name: ENV['COMMISH_EMAIL'],
+    password: ENV['COMMISH_PWD']
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

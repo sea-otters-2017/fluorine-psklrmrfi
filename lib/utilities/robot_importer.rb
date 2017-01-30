@@ -1,4 +1,5 @@
 module RobotImporter
+
   def self.import_from(options)
     api_data = get_json(options[:api_url])
     manufacturers = api_data['manufacturers']
